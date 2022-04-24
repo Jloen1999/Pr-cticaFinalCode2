@@ -1,5 +1,5 @@
 # ***__PRIMERA PRÁCTICA FINAL DE CODE2__***
-### ENUNCIADO ### :clipboard:
+### 1.ENUNCIADO ### :clipboard:
 ```
 Se trata de realizar, en CODE 2, un proceso que realice un pequeño 
 trabajo de “criptografía”.
@@ -17,7 +17,7 @@ Puerto de Entrada IP01, el valor A; se visualizará, por el Puerto de Salida
 OP01, la posición H’A001 para que se introduzca, por el Puerto de Entrada 
 IP01, el valor B, … La correspondencia se denota a continuación:
 
-![image](https://user-images.githubusercontent.com/74373827/164997620-9947e05b-a815-4471-a2f0-dd8ae37bbe9f.png)
+
 
 ```
 |***POSICIONES***|***CONTENIDOS***|
@@ -34,7 +34,7 @@ IP01, el valor B, … La correspondencia se denota a continuación:
 |H’A009| D|
 
 
-## CÓDIGO DEL PROGRAMA
+## 2.CÓDIGO DEL PROGRAMA
 ```code2
 ;COMIENZO DEL PROGRAMA
 
@@ -326,6 +326,33 @@ Desplazar:
 
 END  
 
-   
-
 ```
+
+## 3. Memoria
+Para realizar esta practica, he dividido la tarea a realizar 6 partes:
+1. Almacenamiento de valores en memoria
+Amacenar los valores es sencillo, simplemente ha de hacerse un bucle que repita una instruccion de lectura por 9 veces,
+donde introduzco el dato a almacenar a traves del puerto OP01.
+2. Lectura de la cifra
+Quizas la parte mas facil de la practica, donde solamente he de guardar el valor introducido por el puerto OP01 en un
+registro cualquiera.
+3. Descomposicion del numero
+Aqui es donde viene lo “complicado” puesto que para posteriormente acceder a las poisciones de memoria tengo que
+descomponer el numero en cifras, de modo que si el numero es “1234” las cifras seran 1, 2, 3 y 4.
+Práctica CODE 2. Curso 2021/ 2022 3
+Para esto copio el numero original almacenado en un registro en otros 3 registros y mediante operaciones de
+desplazamiento en cada uno de ellos, voy haciendo que quede la cifra en la posicion del bit menos significativo y el resto
+ceros. Esto es: 0001, 0002, 0003 y 0004.
+4. Traduccion de las cifras
+Para traducir las cifras a su clave, simplemente accedo a la posicion de memoria determinada por rD+ la cifra (que está
+almacenada en un registro) y guardo el contenido de dicha posicion en registros. Si el numero era 1234, el contenido de
+los registros será 000B, 000C, 000D y 000E.
+5. Recomposicion de la clave
+Una vez tengo las cifras en clave tengo que meter la cifra mas signficativa en un registro, desplazar a la izquierda 4 veces
+y sumar la siguiente cifra mas significativa. Repeto este proceso 3 veces y por ultimo añado la ultima cifra (la menos
+significativa) a dicho registro.
+Para esta instruccion repetitva he creado una subrutina a la cual llamo cada vez que hay que hacer el desplazamiento a la
+izquierda.
+6. Almacenamiento de la clave en memoria
+Una vez tengo la clave en el registro, la almaceno en la posicion de memoria H’A00A. Esto lo hago a traves de la
+instruccion ST [rD+H’00], rX dando valor H’ A0 a la parte alta de rD y valor H’0A a la parte baja.
