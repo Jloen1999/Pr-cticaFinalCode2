@@ -329,14 +329,11 @@ END
 ```
 
 ## 3. Memoria
-Para realizar esta practica, he dividido la tarea a realizar 6 partes:
-1. Almacenamiento de valores en memoria
-Amacenar los valores es sencillo, simplemente ha de hacerse un bucle que repita una instruccion de lectura por 9 veces,
-donde introduzco el dato a almacenar a traves del puerto OP01.
-2. Lectura de la cifra
-Quizas la parte mas facil de la practica, donde solamente he de guardar el valor introducido por el puerto OP01 en un
-registro cualquiera.
-3. Descomposicion del numero
+__Para realizar esta practica, he dividido la tarea a realizar 6 partes:
+1. Almacenamiento de valores en memoria introducidos por el puerto IP01 por cada posición visualizada en OP01 
+2. Lectura de la cifra, guardamos los valores introducidos por el puerto IP01 en su correspondiente posición en memoria
+3. Desplazamiento de cada una de las cifras de la clave intorducida por el puerto IP01
+4. Accedemos primero en las posiciones en memoria pero para ello primero descomponemos las cifras. 
 Aqui es donde viene lo “complicado” puesto que para posteriormente acceder a las poisciones de memoria tengo que
 descomponer el numero en cifras, de modo que si el numero es “1234” las cifras seran 1, 2, 3 y 4.
 Práctica CODE 2. Curso 2021/ 2022 3
@@ -355,4 +352,4 @@ Para esta instruccion repetitva he creado una subrutina a la cual llamo cada vez
 izquierda.
 6. Almacenamiento de la clave en memoria
 Una vez tengo la clave en el registro, la almaceno en la posicion de memoria H’A00A. Esto lo hago a traves de la
-instruccion ST [rD+H’00], rX dando valor H’ A0 a la parte alta de rD y valor H’0A a la parte baja.
+instruccion ST [rD+H’00], rX dando valor H’ A0 a la parte alta de rD y valor H’0A a la parte baja.__
