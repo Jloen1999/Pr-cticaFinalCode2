@@ -1,5 +1,5 @@
 # ***__PRIMERA PRÁCTICA FINAL DE CODE2__***
-### 1.ENUNCIADO ### :clipboard:
+### 1.ENUNCIADO :clipboard:
 ```
 Se trata de realizar, en CODE 2, un proceso que realice un pequeño 
 trabajo de “criptografía”.
