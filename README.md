@@ -353,3 +353,12 @@ izquierda.
 6. Almacenamiento de la clave en memoria
 Una vez tengo la clave en el registro, la almaceno en la posicion de memoria H’A00A. Esto lo hago a traves de la
 instruccion ST [rD+H’00], rX dando valor H’ A0 a la parte alta de rD y valor H’0A a la parte baja.__
+
+
+## 4. Bibliografia
+He recurido a la documentación del campus y a videos de Youtube para solventar las dudas que me surgían a medida que avanzaba en el proyecto.
+
+## 5. Observación
+Me ha resultado bastante entretenido pero al mismo tiempo un lío de cabeza ya que el cerebro humano no está programado para pensar en lenguaje máquina. 
+He aprendido mucho sobre el funcionamiendo interno de las máquinas, los programas operando en a nivel bajo.
+
